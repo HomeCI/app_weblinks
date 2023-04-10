@@ -1,6 +1,6 @@
 FROM node:14-alpine AS builder
 WORKDIR /app
-COPY ./hcilinks .
+COPY ./hcilinks_front .
 RUN npm install --production
 RUN npm run build
 
