@@ -27,13 +27,14 @@ const Grid = () => {
 
   return (
 
-    <div className="mx-auto ">
-      <div className="grid grid-cols-4 gap-1 items-center justify-center h-90">
+    <div className="mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-1 items-center justify-center h-90">
         {links.map((link, index) => (
           <Link key={index} {...link} />
         ))}
       </div>
     </div>
+
 
   );
 };
