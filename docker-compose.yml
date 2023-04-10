@@ -5,3 +5,8 @@ services:
     image: alpeza/hcilinkweb:latest
     ports:
       - '83:80'
+    networks:
+      - core_npm_hcinet
+networks:
+  core_npm_hcinet:
+    external: true
