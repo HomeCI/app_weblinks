@@ -1,5 +1,5 @@
-from flask import Flask, jsonify
-from flask_restful import Resource, Api
+from flask import Flask
+from flask_restful import Api
 from dotenv import load_dotenv
 from endpoints import links
 
