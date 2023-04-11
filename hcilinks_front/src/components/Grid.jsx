@@ -1,36 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 import Link from "./Link";
+import axios from 'axios';
+
 
 const Grid = () => {
-  const links = [
-    {
-      title: "Jenkins",
-      description: "Description for Link 1",
-      emoji: "🚀"
-    },
-    {
-      title: "Portainer",
-      description: "Description for Link 2",
-      emoji: "🌟"
-    },
-    {
-      title: "Link 3",
-      description: "Description for Link 3",
-      emoji: "🌈"
-    },
-    {
-      title: "Link 4",
-      description: "Description for Link 4",
-      emoji: "🎉"
-    },
-  ];
+  const [links, setLinks] = useState([]);
+
+  useEffect(() => {
+    const apiUrl = process.env.REACT_APP_API_URL;
+
+    axios.get(`${apiUrl}/api/links`)
+      .then(res => {
+        console.log(res)
+        setLinks(res.data);
+      })
+      .catch(err => console.error(err));
+  }, []);
 
   return (
 
     <div className="mx-auto">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-1 items-center justify-center h-90">
-        {links.map((link, index) => (
-          <Link key={index} {...link} />
+        {links.map((link) => (
+          <Link key={link.id} {...link} />
         ))}
       </div>
     </div>

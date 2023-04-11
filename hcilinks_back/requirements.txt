@@ -1,0 +1,6 @@
+Flask==1.1.4
+Flask_RESTful==0.3.8
+flask_cors==3.0.10
+pysondb==1.6.7
+python-dotenv==1.0.0
+markupsafe==1.1.1

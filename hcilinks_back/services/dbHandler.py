@@ -10,7 +10,7 @@ class DbHandler:
         return self.database
 
     def getDBPath(self, dbkey):
-        db_name = os.getenv(dbkey, f"{dbkey}.json")
+        db_name = os.getenv(dbkey, f"db/{dbkey}.json")
         root_dir = os.path.abspath(
             os.path.join(os.path.dirname(__file__), '..'))
         db_path = os.path.join(root_dir, db_name)

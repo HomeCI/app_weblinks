@@ -4,9 +4,15 @@ services:
     build: .
     image: alpeza/hcilinkweb:latest
     ports:
-      - '83:80'
+      - '84:80'
+    environment:
+      - REACT_APP_API_URL=http://127.0.0.1:5000
+      - DATABASE_LINKS=/app/backend/db/links.json
+    volumes:
+      - ./ldb:/app/backend/db
     networks:
       - core_npm_hcinet
+
 networks:
   core_npm_hcinet:
     external: true
